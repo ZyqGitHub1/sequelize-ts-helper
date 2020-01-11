@@ -1,6 +1,6 @@
-# sequelize-ts-helper README
+# sequelize-ts-helper
 
-This is the README for your extension "sequelize-ts-helper".
+This is the README for extension "sequelize-ts-helper".
 
 ## Features
 
