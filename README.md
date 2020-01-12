@@ -147,6 +147,13 @@ Initial release of sequelize-ts-helper
 - add '\_' and '\$' in variable regular expression
 - support Double quotation marks(")
 
+### 1.0.2
+
+- add image in README
+
+### 1.0.3
+
+- use lodash.upperfirst
 ---
 
 **Enjoy!**
