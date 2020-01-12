@@ -1,8 +1,8 @@
 const inflection = require("inflection");
-const _ = require("lodash");
+const upperFirst = require("lodash.upperfirst");
 
 function generateHasManyCode(fieldWord, associationClass) {
-  const upperFirstFieldWord = _.upperFirst(fieldWord);
+  const upperFirstFieldWord = upperFirst(fieldWord);
   const pluralFieldWord = inflection.pluralize(upperFirstFieldWord);
   const singularFieldWord = inflection.singularize(upperFirstFieldWord);
 

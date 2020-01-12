@@ -1,8 +1,8 @@
 const inflection = require("inflection");
-const _ = require("lodash");
+const upperFirst = require("lodash.upperfirst");
 
 function generateHasOneCode(fieldWord, associationClass) {
-  const upperFirstFieldWord = _.upperFirst(fieldWord);
+  const upperFirstFieldWord = upperFirst(fieldWord);
   const singularFieldWord = inflection.singularize(upperFirstFieldWord);
 
   const accessorsField = {

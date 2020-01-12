@@ -1,5 +1,4 @@
 const vscode = require("vscode");
-const _ = require("lodash");
 const generateBelongsToCode = require("./generator/generateBelongsToCode");
 const generateBelongsToManyCode = require("./generator/generateBelongsToManyCode");
 const generateHasManyCode = require("./generator/generateHasManyCode");
@@ -46,7 +45,7 @@ function activate(context) {
       }
       const fieldWord = getFieldWord(text);
       const associationClass = getAssociationClass(text);
-      const associationAction = _.get(associationActionMap, associationType);
+      const associationAction = associationActionMap[associationType];
       const code = associationAction(fieldWord, associationClass);
 
       editor.edit(edit => {
