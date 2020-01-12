@@ -70,20 +70,20 @@ function activate(context) {
 }
 
 function getAssociationType(str) {
-  const associationRegx = /\s*@([a-zA-Z0-9]+)([\s\S]+)/;
-  const associationWord = str.match(associationRegx)[1];
+  const associationRegex = /\s*@([a-zA-Z0-9_$]+)([\s\S]+)/;
+  const associationWord = str.match(associationRegex)[1];
   return associationWord;
 }
 
 function getFieldWord(str) {
-  const fieldRegx = /([\s\S]+)as:(\s+)'([a-zA-Z0-9]+)'([\s\S]+)/;
-  const fieldWord = str.match(fieldRegx)[3];
+  const fieldRegex = /([\s\S]+)as:(\s+)['"]([a-zA-Z0-9_$]+)['"]([\s\S]+)/;
+  const fieldWord = str.match(fieldRegex)[3];
   return fieldWord;
 }
 
 function getAssociationClass(str) {
-  const associationClassRegx = /([\s\S]+)=>(\s+)([a-zA-Z0-9]+)([\s\S]+)/;
-  const associationClass = str.match(associationClassRegx)[3];
+  const associationClassRegex = /([\s\S]+)=>(\s+)([a-zA-Z0-9_$]+)([\s\S]+)/;
+  const associationClass = str.match(associationClassRegex)[3];
   return associationClass;
 }
 
