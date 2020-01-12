@@ -6,6 +6,8 @@ This is the README for extension "sequelize-ts-helper".
 
 generate association mixin field in typescript sequelize model;
 
+![feature](images/generate.gif)
+
 - @BelongsToMany
 
 ```typescript
@@ -130,11 +132,18 @@ public setRole: BelongsToSetAssociationMixin<Role, number>;
 public createRole: BelongsToCreateAssociationMixin<Role>;
 ```
 
+> Note: Now only supported a-z A-Z 0-9 _ $ in variable declaration
+
 ## Release Notes
 
 ### 1.0.0
 
 Initial release of sequelize-ts-helper
+
+### 1.0.1
+
+  + add '_' and '$' in variable regular expression
+  + support Double quotation marks(")
 
 ---
 
