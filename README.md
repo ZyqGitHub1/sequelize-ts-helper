@@ -8,6 +8,8 @@ generate association mixin field in typescript sequelize model;
 
 ![feature](https://raw.githubusercontent.com/ZyqGitHub1/sequelize-ts-helper/master/images/generate.gif)
 
+> if you can't view image. you can open it in browser([click me](https://raw.githubusercontent.com/ZyqGitHub1/sequelize-ts-helper/master/images/generate.gif))
+
 - @BelongsToMany
 
 ```typescript
@@ -132,7 +134,7 @@ public setRole: BelongsToSetAssociationMixin<Role, number>;
 public createRole: BelongsToCreateAssociationMixin<Role>;
 ```
 
-> Note: Now only supported a-z A-Z 0-9 _ $ in variable declaration
+> Note: Now only supported a-z A-Z 0-9 \_ \$ in variable declaration
 
 ## Release Notes
 
@@ -142,8 +144,8 @@ Initial release of sequelize-ts-helper
 
 ### 1.0.1
 
-  + add '_' and '$' in variable regular expression
-  + support Double quotation marks(")
+- add '\_' and '\$' in variable regular expression
+- support Double quotation marks(")
 
 ---
 
