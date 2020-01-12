@@ -6,7 +6,7 @@ This is the README for extension "sequelize-ts-helper".
 
 generate association mixin field in typescript sequelize model;
 
-![feature](images/generate.gif)
+![feature](https://raw.githubusercontent.com/ZyqGitHub1/sequelize-ts-helper/master/images/generate.gif)
 
 - @BelongsToMany
 
