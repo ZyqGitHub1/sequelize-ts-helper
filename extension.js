@@ -25,7 +25,7 @@ function activate(context) {
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with  registerCommand
   // The commandId parameter must match the command field in package.json
-  let disposable = vscode.commands.registerCommand("extension.generate-mixin-field", function() {
+  let disposable = vscode.commands.registerCommand("extension.generate-mixin-field", function () {
     // The code you place here will be executed every time your command is executed
     var editor = vscode.window.activeTextEditor;
     if (!editor) return; // No open text editor
@@ -43,8 +43,17 @@ function activate(context) {
         vscode.window.showErrorMessage("选择字段不是sequelize关联字段");
         return;
       }
-      const fieldWord = getFieldWord(text);
+      const hasAsFieldWordResult = hasAsFieldWord(text);
+      console.log(hasAsFieldWordResult)
       const associationClass = getAssociationClass(text);
+      let fieldWord = '';
+      if (hasAsFieldWordResult) {
+        fieldWord = getFieldWord(text);
+      }
+      else {
+        fieldWord = associationClass;
+      }
+      console.log(fieldWord);
       const associationAction = associationActionMap[associationType];
       const code = associationAction(fieldWord, associationClass);
 
@@ -74,6 +83,12 @@ function getAssociationType(str) {
   return associationWord;
 }
 
+function hasAsFieldWord(str) {
+  const asFieldRegex = /([\s\S]+)as:(\s+)['"]([a-zA-Z0-9_$]+)['"]([\s\S]+)/;
+  const hasAsFieldWord = asFieldRegex.test(str)
+  return hasAsFieldWord;
+}
+
 function getFieldWord(str) {
   const fieldRegex = /([\s\S]+)as:(\s+)['"]([a-zA-Z0-9_$]+)['"]([\s\S]+)/;
   const fieldWord = str.match(fieldRegex)[3];
@@ -89,7 +104,7 @@ function getAssociationClass(str) {
 exports.activate = activate;
 
 // this method is called when your extension is deactivated
-function deactivate() {}
+function deactivate() { }
 
 module.exports = {
   activate,
